@@ -148,7 +148,7 @@ static char *camera_fixup_getparams(int __attribute__((unused)) id,
     }
 
     android::String8 strParams = params.flatten();
-    char *ret = strdup(strParams.string());
+    char *ret = strdup(strParams.c_str());
 
 #ifdef LOG_PARAMETERS
     ALOGV("%s: fixed parameters:", __FUNCTION__);
@@ -182,7 +182,7 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 
     if (fixed_set_params[id])
         free(fixed_set_params[id]);
-    fixed_set_params[id] = strdup(strParams.string());
+    fixed_set_params[id] = strdup(strParams.c_str());
     char *ret = fixed_set_params[id];
 
 #ifdef LOG_PARAMETERS
