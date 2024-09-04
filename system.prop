@@ -61,3 +61,4 @@ wifi.interface=wlan0
 
 # Bpf
 ro.kernel.ebpf.supported=false
+bpf.progs_loaded=1
